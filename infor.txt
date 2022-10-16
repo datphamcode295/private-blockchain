@@ -1,0 +1,17 @@
+node1
+    0x3a3c2C4e2aCe60283cC2241193Dff5504Db35271
+    dat123
+node2
+    0x3dC66e6047CfA986C2C08227092E4Ffb2Ab2faC7
+    dat123
+
+enode://72eae65669210b8e7325698c582fdf20a469e6dd8d89640f7b55f4a22b0f66917c70d1cb7bf2e6868e750027bc0572a3e7b45099e9198f0f78a20474c37daca2@127.0.0.1:0?discport=30301
+
+node1 forder
+geth --networkid 123123 --datadir "./data" --bootnodes enode://72eae65669210b8e7325698c582fdf20a469e6dd8d89640f7b55f4a22b0f66917c70d1cb7bf2e6868e750027bc0572a3e7b45099e9198f0f78a20474c37daca2@127.0.0.1:30301 --port 30303 --ipcdisable --syncmode full --http --allow-insecure-unlock --http.corsdomain "*" --http.port 8545 --unlock 0x3a3c2C4e2aCe60283cC2241193Dff5504Db35271 --password password.txt --mine console
+
+node2 folder
+geth --networkid 123123 --datadir "./data" --bootnodes enode://72eae65669210b8e7325698c582fdf20a469e6dd8d89640f7b55f4a22b0f66917c70d1cb7bf2e6868e750027bc0572a3e7b45099e9198f0f78a20474c37daca2@127.0.0.1:30301 --port 30304 --ipcdisable --syncmode full --http --allow-insecure-unlock --http.corsdomain "*" --http.port 8546 --authrpc.port 8552 --unlock 0x3dC66e6047CfA986C2C08227092E4Ffb2Ab2faC7 --password password.txt  console
+
+bnot folder
+bootnode -nodekey "./boot.key" -verbosity 7 -addr "127.0.0.1:30301"
